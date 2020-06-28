@@ -1,0 +1,145 @@
+@import url("https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,400;0,600;1,700&display=swap");
+
+body,
+html {
+  font-family: "Fira Sans", Arial, Helvetica, sans-serif;
+  font-size: 15px;
+}
+
+.country-list {
+  .card {
+    background: transparent no-repeat center;
+    background-size: cover;
+    position: relative;
+    cursor: default;
+    padding: 15px 0;
+    &:before {
+      content: "";
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      background: rgba($color: #000000, $alpha: 0.5);
+      z-index: 2;
+    }
+
+    &#us {
+      background-image: url("https://ak8.picdn.net/shutterstock/videos/3418328/thumb/1.jpg");
+    }
+
+    &#tr {
+      background-image: url("https://ak6.picdn.net/shutterstock/videos/1024027946/thumb/1.jpg");
+    }
+
+    &#who {
+      background-image: url("https://ak0.picdn.net/shutterstock/videos/21286180/thumb/1.jpg");
+    }
+
+    .card-body {
+      z-index: 5;
+      color: #fff;
+
+      .count {
+        font-size: 26px;
+        font-weight: 700;
+      }
+      .title {
+        font-size: 18px;
+      }
+    }
+  }
+}
+
+.loader {
+  left: 50%;
+  bottom: 0;
+  transform: translate(-50%, calc(100% + 1rem));
+  opacity: 0;
+  z-index: -1;
+  transition: opacity 200ms ease;
+
+  &.active {
+    opacity: 1;
+  }
+}
+
+.no-result {
+  opacity: 0;
+  z-index: -1;
+  transition: opacity 200ms ease;
+
+  &.active {
+    opacity: 1;
+  }
+}
+
+.country-details {
+  opacity: 0;
+  z-index: -1;
+  transform: translateY(25%);
+  transition: opacity 200ms ease 0ms, transform 200ms ease 0ms,
+    z-index 0ms ease 210ms;
+
+  &.active {
+    opacity: 1;
+    z-index: 2;
+    transform: translateY(0);
+    transition: opacity 200ms ease 10ms, transform 200ms ease 10ms,
+      z-index 0ms ease 0ms;
+  }
+
+  .country-name {
+    .country-cover {
+      width: 36px;
+      height: 36px;
+      background: transparent no-repeat center;
+      background-size: cover;
+    }
+
+    .name {
+      font-size: 18px;
+      font-weight: 500;
+    }
+  }
+
+  .population {
+    span {
+      font-weight: 600;
+    }
+  }
+
+  .details {
+    display: grid;
+    grid-template-columns: 33.3% 33.3% 33.3%;
+
+    .detail {
+      margin-top: 20px;
+
+      .count {
+        font-size: 26px;
+        font-weight: 700;
+      }
+
+      .title {
+        font-size: 13px;
+        font-weight: 500;
+        color: rgba($color: #000000, $alpha: 0.7);
+
+        @media (min-width: 992px) {
+          font-size: 16px;
+        }
+      }
+    }
+  }
+
+  .updated-at {
+    font-size: 13px;
+    bottom: 0;
+    right: 0;
+
+    span {
+      font-weight: 600;
+    }
+  }
+}

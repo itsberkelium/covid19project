@@ -1,0 +1,154 @@
+@import url("https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,400;0,600;1,700&display=swap");
+body,
+html {
+  font-family: "Fira Sans", Arial, Helvetica, sans-serif;
+  font-size: 15px;
+}
+
+.country-list .card {
+  background: transparent no-repeat center;
+  background-size: cover;
+  position: relative;
+  cursor: default;
+  padding: 15px 0;
+}
+
+.country-list .card:before {
+  content: "";
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 2;
+}
+
+.country-list .card#us {
+  background-image: url("https://ak8.picdn.net/shutterstock/videos/3418328/thumb/1.jpg");
+}
+
+.country-list .card#tr {
+  background-image: url("https://ak6.picdn.net/shutterstock/videos/1024027946/thumb/1.jpg");
+}
+
+.country-list .card#who {
+  background-image: url("https://ak0.picdn.net/shutterstock/videos/21286180/thumb/1.jpg");
+}
+
+.country-list .card .card-body {
+  z-index: 5;
+  color: #fff;
+}
+
+.country-list .card .card-body .count {
+  font-size: 26px;
+  font-weight: 700;
+}
+
+.country-list .card .card-body .title {
+  font-size: 18px;
+}
+
+.loader {
+  left: 50%;
+  bottom: 0;
+  -webkit-transform: translate(-50%, calc(100% + 1rem));
+          transform: translate(-50%, calc(100% + 1rem));
+  opacity: 0;
+  z-index: -1;
+  -webkit-transition: opacity 200ms ease;
+  transition: opacity 200ms ease;
+}
+
+.loader.active {
+  opacity: 1;
+}
+
+.no-result {
+  opacity: 0;
+  z-index: -1;
+  -webkit-transition: opacity 200ms ease;
+  transition: opacity 200ms ease;
+}
+
+.no-result.active {
+  opacity: 1;
+}
+
+.country-details {
+  opacity: 0;
+  z-index: -1;
+  -webkit-transform: translateY(25%);
+          transform: translateY(25%);
+  -webkit-transition: opacity 200ms ease 0ms, z-index 0ms ease 210ms, -webkit-transform 200ms ease 0ms;
+  transition: opacity 200ms ease 0ms, z-index 0ms ease 210ms, -webkit-transform 200ms ease 0ms;
+  transition: opacity 200ms ease 0ms, transform 200ms ease 0ms, z-index 0ms ease 210ms;
+  transition: opacity 200ms ease 0ms, transform 200ms ease 0ms, z-index 0ms ease 210ms, -webkit-transform 200ms ease 0ms;
+}
+
+.country-details.active {
+  opacity: 1;
+  z-index: 2;
+  -webkit-transform: translateY(0);
+          transform: translateY(0);
+  -webkit-transition: opacity 200ms ease 10ms, z-index 0ms ease 0ms, -webkit-transform 200ms ease 10ms;
+  transition: opacity 200ms ease 10ms, z-index 0ms ease 0ms, -webkit-transform 200ms ease 10ms;
+  transition: opacity 200ms ease 10ms, transform 200ms ease 10ms, z-index 0ms ease 0ms;
+  transition: opacity 200ms ease 10ms, transform 200ms ease 10ms, z-index 0ms ease 0ms, -webkit-transform 200ms ease 10ms;
+}
+
+.country-details .country-name .country-cover {
+  width: 36px;
+  height: 36px;
+  background: transparent no-repeat center;
+  background-size: cover;
+}
+
+.country-details .country-name .name {
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.country-details .population span {
+  font-weight: 600;
+}
+
+.country-details .details {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 33.3% 33.3% 33.3%;
+      grid-template-columns: 33.3% 33.3% 33.3%;
+}
+
+.country-details .details .detail {
+  margin-top: 20px;
+}
+
+.country-details .details .detail .count {
+  font-size: 26px;
+  font-weight: 700;
+}
+
+.country-details .details .detail .title {
+  font-size: 13px;
+  font-weight: 500;
+  color: rgba(0, 0, 0, 0.7);
+}
+
+@media (min-width: 992px) {
+  .country-details .details .detail .title {
+    font-size: 16px;
+  }
+}
+
+.country-details .updated-at {
+  font-size: 13px;
+  bottom: 0;
+  right: 0;
+}
+
+.country-details .updated-at span {
+  font-weight: 600;
+}
+/*# sourceMappingURL=styles.css.map */
