@@ -62,7 +62,7 @@ const search = (q) => {
 const getSearchedDetails = (index) => {
   const country = countries[index];
   fetch(
-    `https://restcountries.com/v2/alpha/${country.CountryCode}?fields=flag;population`
+    `https://restcountries.com/v2/alpha/${country.CountryCode}?fields=flag,population`
   )
     .then((response) => response.json())
     .then((data) => {
